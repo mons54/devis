@@ -1,5 +1,9 @@
 <?php
 
+require __DIR__.'/../vendor/autoload.php';
+
+use Spipu\Html2Pdf\Html2Pdf;
+
 $id = (int) $_GET['id'];
 
 if(!empty($id)) {
@@ -92,12 +96,8 @@ if(!empty($id)) {
 	</page>
 
 	<?php
-	$content = ob_get_clean(); 
-	require_once '../html2pdf/html2pdf.class.php';
-	$pdf = new HTML2PDF('P','A4','fr', true, 'UTF-8', 4);
-	$pdf->pdf->SetDisplayMode('fullwidth');
-	$pdf->WriteHTML($content);
-	$pdf->Output();
+	$html2pdf = new Html2Pdf();
+	$html2pdf->writeHTML(ob_get_clean());
+	$html2pdf->output('devis-' . $id. '.pdf');
 }
-?>
 
