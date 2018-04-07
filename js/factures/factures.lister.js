@@ -18,8 +18,10 @@
 			
 			var that = this;
 
-			$('<input class="" placeholder="Recherche">').appendTo(that.element).change(function () {
-					that.lister(null, $(this).val());
+			$('<input style="padding: 8px 15px;border: 1px solid #dadada;margin-bottom: 20px;" placeholder="Recherche">')
+			.appendTo(that.element)
+			.change(function () {
+					that._lister(null, $(this).val());
 			});
 			
 			var table = $('<table id="lister-devis"></table>').appendTo(that.element);
@@ -51,10 +53,11 @@
 					for(var i in data.data)
 						that._afficher_factures(data.data[i]);
 				}
+
+				$(that.page).remove();
 				
 				if(!search && data.page) {
 					that.options.page = data.page.page;
-					$(that.page).remove();
 					that.page = $('<section id="page"></section>').appendTo(that.element);
 					
 					if (data.page.pagePrec) {

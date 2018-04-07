@@ -3,7 +3,7 @@ $classDevis = new devis();
 
 $limit=20;
 
-$search = !empty($_POST['search'] ? (string) $_POST['search'] : null;
+$search = !empty($_POST['search']) ? (string) $_POST['search'] : null;
 
 if(!empty($_POST['page']))
 	$page=(int) $_POST['page'];

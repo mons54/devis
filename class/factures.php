@@ -65,14 +65,15 @@ class factures extends client {
 			
 		$this->sql = '
 			SELECT d.id id, FROM_UNIXTIME(d.timestamp,"%d/%m/%Y") date, 
-			IF(c.societe != "", concat(c.societe, " - ", c.nom, " ", c.prenom), concat(c.nom, " ", c.prenom)) client 
+			IF(c.societe != "", c.societe, concat(c.nom, " ", c.prenom)) client 
 			FROM factures d
 			LEFT JOIN clients c
 			ON d.client = c.id
 		';
 
 		if ($search) {
-			$this->sql .= ' WHERE c.nom LIKE "%' . mysql_escape_string($search) . '%" OR c.prenom LIKE "%' . mysql_escape_string($search) . '%"';
+			$search = mysql_escape_string($search);
+			$this->sql .= ' WHERE c.societe LIKE "%' . $search . '%" OR c.nom LIKE "%' . $search . '%" OR c.prenom LIKE "%' . $search . '%"';
 		}
 
 		$this->sql .= ' ORDER BY d.id DESC';
