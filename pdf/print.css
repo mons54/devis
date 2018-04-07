@@ -1,0 +1,98 @@
+page{
+	width:100%;
+	font-size:12px;
+}
+p{
+	position:relative;
+	text-align:justify;
+	margin:10px 0;
+	line-height:15px;
+}
+page,
+pre {
+	font-family: Arial, tahoma, Verdana, Helvetica, sans-serif;
+}
+table{
+	position:relative;
+	border-collapse:collapse;
+	width:100%;
+}
+table tr th{
+	border: 1px solid #000;
+	vertical-align:middle;
+	padding:3px 5px;
+}
+table tr td{
+	border: 1px solid #000;
+	vertical-align:top;
+	padding:5px 5px 0 5px;
+}
+
+.quantite { width:60px; }
+.description { width:340px; line-height:15px}
+.description pre{ width:340px;}
+.prix { width:100px; }
+.montant { width:100px; }
+
+.total {
+	border-left:0px;
+	border-bottom:0px;
+	text-align:right;
+}
+
+.left { float:left; }
+.right { float:right; }
+.center{ text-align:center; }
+
+#header,
+#footer {
+	position:relative;
+	margin:35px;
+}
+	
+.logo {
+	position:relative;
+	left:-10px;
+	top:-10px;
+	margin-bottom:20px;
+}
+
+.logo img {
+	width:105px;
+}
+
+.date {
+	position:absolute;
+	top:0px;
+	right:0px;
+	text-align:right;
+}
+.client {
+	position:absolute;
+	top:70px;
+	right:70px;
+	padding:-10px 20px 10px 20px;
+	width:200px;
+	border:1px solid #000;
+}
+
+
+.date,
+.client,
+.adresse,
+.societe{
+	line-height:20px;
+	font-size:13px;
+}
+
+#signature {
+	position:relative;
+	font-weight:bold;
+	font-style:italic;
+	margin-top:50px;
+}
+
+#signature .right {
+	position:absolute;
+	right:80px;
+}
